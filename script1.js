@@ -32,3 +32,20 @@ for(let i = 0; i < arrayObject.length; i++){
     console.log(id, name, age, address);
 }
 
+// Vòng while để duyệt qua mảng
+let i = 0;
+while(i < arrayObject.length){
+    console.log("Vong lap while: " + arrayObject[i].name);
+    i++;
+}
+
+// Vòng do while để duyệt qua mảng
+i = 0;
+do{
+    console.log("Vong lap do while: " + arrayObject[i].address);
+    i++;
+}while(i < arrayObject.length);
+
+do{
+
+}while(false);//vòng lặp do while sẽ thực hiện ít nhất một lần dù điều kiện có đúng hay không. Trong trường hợp này, vòng lặp sẽ thực hiện một lần và sau đó dừng lại vì điều kiện là false.

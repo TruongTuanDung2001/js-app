@@ -45,3 +45,24 @@ function addArrayNumbers(numbers){
         alert("Please enter a number between 1 and 9");
     }
 }
+
+//js ternary
+let ageAdult = 18;
+let isAdult = ageAdult >= 18 ? "You are an adult" : "You are not an adult";
+console.log(isAdult);
+
+//switch (key)
+let rangking = 4;
+switch (rangking) {
+    case 1:
+        console.log("Gold");
+        break;
+    case 2:
+        console.log("Silver");
+        break;
+    case 3:
+        console.log("Bronze");
+        break;
+    default:
+        console.log("Good job!");
+}

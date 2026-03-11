@@ -31,3 +31,4 @@ for(let i = 0; i < arrayObject.length; i++){
     let {id, name, age, address} = arrayObject[i];
     console.log(id, name, age, address);
 }
+

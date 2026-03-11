@@ -49,3 +49,21 @@ do{
 do{
 
 }while(false);//vòng lặp do while sẽ thực hiện ít nhất một lần dù điều kiện có đúng hay không. Trong trường hợp này, vòng lặp sẽ thực hiện một lần và sau đó dừng lại vì điều kiện là false.
+
+//break và continue
+for(let i = 0; i < arrayObject.length; i++){
+    if(arrayObject[i].age > 26){
+        break;//dừng vòng lặp khi gặp điều kiện đúng
+        alert('No run');
+    }
+}
+
+let j = 1;
+while(j <= 10){
+    if(j === 5){
+        j++;
+        continue;//bỏ qua lần lặp hiện tại khi gặp điều kiện đúng
+    }
+    console.log(j);
+    j++;
+}

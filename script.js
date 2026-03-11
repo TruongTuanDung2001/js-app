@@ -1,3 +1,4 @@
+// Biến và hằng số
 let a = 10;
 let b = 20;
 let c = a + b;
@@ -8,6 +9,7 @@ let bb = 20;
 bb = aa + bb;
 console.log(bb);
 
+// Lấy phần tử từ mảng
 let result = document.getElementById("result");
 const submit = document.getElementById("submit");
 
@@ -29,6 +31,7 @@ submit.addEventListener("click", function(){
 
 let arr = [1, 2, 3, 4, 5];
 
+// Hàm thêm số vào mảng
 function addArrayNumbers(numbers){
     if(numbers === 0){
         alert("Please enter a valid number");

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* background: rgba(14, 95, 14, 0.2); */
+    }
+    body {
+      background: rgba(14, 95, 14, 0.6);
+    }
+    a,
+    ul,
+    li {
+      list-style: none;
+      text-decoration: none;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .content {
+      width: 400px;
+      height: 400px;
+      background: rgba(14, 95, 14, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      color: #fff;
+      gap: 12px;
+    }
+    .content h1 {
+      font-size: 24px;
+      background-color: #000;
+      padding: 10px;
+      border-radius: 12px;
+    }
+    .content input,
+    .content select {
+      width: 80%;
+      height: 40px;
+      border-radius: 8px;
+      border: none;
+      padding: 0 12px;
+      color: #fff;
+      background-color: #000;
+    }
+    .content button {
+      width: 80%;
+      height: 40px;
+      border-radius: 8px;
+      border: none;
+      background: #0e5f0e;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .title {
+      margin-top: 20px;
+    }
+    .result {
+      background: rgba(14, 95, 14, 0.5);
+      display: flex;
+      flex-wrap: wrap; /* Xuống hàng */
+      /* flex-direction: column;
+      justify-content: center;
+      align-items: center; */
+      width: 100vw;
+      border-radius: 12px;
+      color: #fff;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 10px 20px;
+    }
+    .result h1 {
+      font-size: 24px;
+      background-color: #000;
+      padding: 5px 10px;
+      border-radius: 12px;
+      height: fit-content;
+      /* position: relative;
+      top: -45px; */
+    }
+    .result .result-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .result .result-list li {
+      background-color: #410793;
+      padding: 10px;
+      border-radius: 12px;
+    }
+    .result .result-list li span {
+      font-weight: bold;
+      background-color: #410793;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Manager Football</h1>
+        <input type="text" id="name" name="name" placeholder="Enter name" />
+        <input type="number" id="age" name="age" placeholder="Enter age" />
+        <select name="address" id="address">
+          <option value="quan12">Quận 12</option>
+          <option value="hiepbinhphuoc">Hiệp Bình Phước</option>
+          <option value="thuduc">Thủ Đức</option>
+        </select>
+        <button type="submit" id="submit-btn">Submit</button>
+      </div>
+
+      <!-- <form action="get">
+            <input type="text" id="name" name="name" placeholder="Enter name">
+            <input type="number" id="age" name="age" placeholder="Enter age">
+            <select name="address" id="address">
+                <option value="quan12">Quận 12</option>
+                <option value="hiepbinhphuoc">Hiệp Bình Phước</option>
+                <option value="thuduc">Thủ Đức</option>
+            </select>
+            <button type="submit" id="submit-btn">Submit</button>
+        </form> -->
+
+      <!-- result -->
+      <div id="result-wrapper" style="display: none;">
+        <div class="title">
+          <h1>Result</h1>
+        </div>
+        <!-- Render html here -->
+        <div class="result" id="result">
+           
+        </div>
+      </div>
+      <!-- <div class="title">
+        <h1>Result</h1>
+        <div class="result">
+          <ul id="result-list" class="result-list">
+            <li>ID: <span id="result-id">1</span></li>
+            <li>Name: <span id="result-name">Nguyễn Văn A</span></li>
+            <li>Age: <span id="result-age"></span>22</li>
+            <li>Address: <span id="result-address">Quan12</span></li>
+          </ul>
+        </div>
+      </div> -->
+    </div>
+  </body>
+
+  <!-- js -->
+  <script src="script.js"></script>
+</html>

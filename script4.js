@@ -56,3 +56,66 @@ var helloName = function (name){
 const helloDay = (day) =>{
     console.log("Have a nice " + day + "!");
 }
+
+
+//Closure
+//Closure là một tính năng mạnh mẽ trong JavaScript, cho phép một hàm truy cập và thao tác với các biến từ phạm vi bên ngoài của nó, ngay cả sau khi phạm vi đó đã kết thúc. Điều này tạo ra một môi trường riêng biệt cho mỗi lần gọi hàm, giúp quản lý trạng thái và dữ liệu một cách hiệu quả.
+
+function outerFunction(){
+    let count = 0;
+    function innerFunction(){
+        count++;
+        console.log("Count: " + count);
+    }
+    return innerFunction;
+}
+
+const myOuterFunction = outerFunction();
+myOuterFunction();
+myOuterFunction();
+myOuterFunction();
+
+//vd
+function createUser(id){
+    let password = "12345"; // Biến password chỉ tồn tại trong phạm vi của createUser
+    return{
+        id: id,
+        getPassword: function(){
+            return password; // Hàm getPassword có thể truy cập biến password nhờ closure
+        },
+        setPassword: (newPassword) =>{
+            password = newPassword; // Hàm setPassword có thể thay đổi giá trị của biến password nhờ closure
+        }
+    }
+}
+
+const user1 = createUser("user1");
+console.log(user1);
+console.log(user1.getPassword()); // In ra: 12345
+user1.setPassword("67890");
+console.log(user1.getPassword()); // In ra: 67890
+
+//vd callback / event
+function count(){
+    //
+    let count = 1;
+    let counter = document.querySelector(".count");
+    let btnCount = document.querySelector(".btn-count");
+    //
+    function increment(){
+        // Khi nút được click, hàm này sẽ được gọi và có thể truy cập biến count và counter nhờ closure, vẫn nhớ biến count không bị reset về 1 mỗi lần gọi hàm increment, mà nó sẽ tăng dần lên mỗi lần nút được click.
+        btnCount.addEventListener("click", function(){
+            counter.textContent = count++;
+        })
+    }
+    //
+    increment();
+}
+count();
+
+
+//Trong ví dụ trên, hàm createUser tạo ra một closure với biến password. Các hàm getPassword và setPassword có thể truy cập và thay đổi giá trị của password, ngay cả sau khi createUser đã hoàn thành thực thi. Điều này cho phép chúng ta quản lý trạng thái của password một cách an toàn và hiệu quả.
+
+//Có nghĩa là cái biến hay function trong cái hàm đã được chạy và kết thúc rồi nhưng mà vẫn có thể truy cập được, vì nó đã được lưu lại trong closure. Closure giúp chúng ta tạo ra các hàm có trạng thái riêng biệt và quản lý dữ liệu một cách hiệu quả.
+
+//Nó vẫn nhớ giá trị của biến cho dù hàm đã kết thúc và biến đã thay đổi giá trị nhưng nó vẫn nhớ giá trị đã thay đổi

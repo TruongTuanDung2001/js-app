@@ -54,36 +54,61 @@ promise.then((data) => {
     console.log(error); //khi thất bại có reject thì chạy phần catch
 })
 
-let delay = new Promise((resolve, reject) => {
-    setTimeout(() =>{
-        resolve("B1")
-    }, 1000)
-})
-let delay2 = new Promise((resolve, reject) =>{
-    setTimeout(()=>{
-        resolve("B2");
-    }, 1000)
-})
-let delay3 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("B3");
-    },1000)
-})
+// let delay = new Promise((resolve, reject) => {
+//     setTimeout(() =>{
+//         resolve("B1")
+//     }, 1000)
+// })
+// let delay2 = new Promise((resolve, reject) =>{
+//     setTimeout(()=>{
+//         resolve("B2");
+//     }, 1000)
+// })
+// let delay3 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("B3");
+//     },1000)
+// })
 
-delay
+// delay
+// .then((data) => {
+//     console.log(data);
+//     return delay2; //return delay2 vì cái then tiếp theo sẽ chạy cái delay2
+// })
+// .then((data) => {
+//     console.log(data);
+//     return delay3; //return delay3 vì cái then tiếp theo sẽ chạy cái delay3
+// })
+// .then((data) => {
+//     console.log(data);
+// })
+// .catch((error) => {
+//     console.log(error); 
+// })
+
+//Làm cái delay ngắn gọn lại
+function delay(text, ms){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(text);
+        }, ms)
+    });
+}
+
+delay("C1", 1000)
 .then((data) => {
     console.log(data);
-    return delay2;
+    return delay("C2", 1000);
 })
 .then((data) => {
     console.log(data);
-    return delay3;
+    return delay("C3", 1000)
 })
 .then((data) => {
     console.log(data);
 })
 .catch((error) => {
-    console.log(error); 
+    console.log(error);
 })
 
 

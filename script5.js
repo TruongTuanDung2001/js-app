@@ -112,7 +112,24 @@ delay("C1", 1000)
 })
 
 
-
-
 //Async/Await
+function userAsync (nameUser){
+    return new Promise((resolve, reject) => {
+        resolve(nameUser);
+    })
+}
 
+function car1 (nameCar){
+    return new Promise((resolve, reject) => {
+        resolve(nameCar);
+    })
+}
+
+const infAsync = async () =>{ //Phải có async trước function, trong function để sử dụng bất đồng bộ thì dùng await
+    await console.log(userAsync("Trương Tuấn Dũng"));
+    await console.log(car1("Wave S 110"));
+    await console.log(userAsync("Dương Văn Điều"));
+    await console.log(car1("Car Three gác"));
+    
+}
+infAsync();

@@ -38,15 +38,55 @@ setTimeout(() => {
 //Promise
 //là một lời hứa trong tương lai, như việc đặt đồ ăn, đang chờ (pending), đã hoàn thành (fulfilled), đã thất bại (rejected).
 //Promise có 3 trang thái: pending (đang chờ), fulfilled (đã hoàn thành), rejected (đã thất bại).
-let promise = new Promise((resolve, reject) =>{
-    //code async ở đây
-    let success = true;
-    if(success){
-        resolve("Thành công");
-    } else {
-        reject("Thất bại");
+let promise = new Promise((resolve, reject) => {
+    const condition = true;
+    if(condition){
+        resolve("Success");
+    }else{
+        reject("false");
     }
-});
+})
+
+promise.then((data) => {
+    console.log(data); //Khi thành thành công có resolve thì chạy phần then
+})
+.catch((error) => {
+    console.log(error); //khi thất bại có reject thì chạy phần catch
+})
+
+let delay = new Promise((resolve, reject) => {
+    setTimeout(() =>{
+        resolve("B1")
+    }, 1000)
+})
+let delay2 = new Promise((resolve, reject) =>{
+    setTimeout(()=>{
+        resolve("B2");
+    }, 1000)
+})
+let delay3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("B3");
+    },1000)
+})
+
+delay
+.then((data) => {
+    console.log(data);
+    return delay2;
+})
+.then((data) => {
+    console.log(data);
+    return delay3;
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => {
+    console.log(error); 
+})
+
+
 
 
 //Async/Await

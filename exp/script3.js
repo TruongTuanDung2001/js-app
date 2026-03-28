@@ -42,11 +42,13 @@ let arrMap = array.map(item =>{
 //FILTER / trả về 1 mảng mới nhưng lọc theo điều kiện, return true / false, số phần tử có thể giảm trong lúc lọc phần tử
 let arrFilter = array.filter(item => item % 3 == 0);
 
-
+//FIND / tìm 1 phần tử và trả về giá trị phần tử đầu tiên tìm thấy, tìm từ trái sang phải, phải có biến mới để chứa giá trị mới.
+let arrFind = arrMap.find(item => item > 2);
 
 //Test result 
 newArr = array;
 console.log(newArr);
 console.log(arrMap);
 console.log(arrFilter);
+console.log(arrFind);
 

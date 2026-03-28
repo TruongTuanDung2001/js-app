@@ -28,7 +28,7 @@ array.shift();
 console.log(array.shift());
 
 //CHECK
-//Map / trả về 1 mảng mới, không ảnh hưởng đến mảng cũ, phải dùng biến mới để lưu lại
+//Map / trả về 1 mảng mới, không ảnh hưởng đến mảng cũ, phải dùng biến mới để lưu lại, duyệt từng phần tử trả về số phần tử mảng giữ nguyên
 array.map(item => item * 2); // chưa lưu mới lại nên mảng cũ vẫn chưa thay đổi
 let arrMap = array.map(item =>{
     if(item % 2 == 0){
@@ -39,8 +39,14 @@ let arrMap = array.map(item =>{
     return item
 }); // mảng mới trả về arrMap
 
+//FILTER / trả về 1 mảng mới nhưng lọc theo điều kiện, return true / false, số phần tử có thể giảm trong lúc lọc phần tử
+let arrFilter = array.filter(item => item % 3 == 0);
+
+
+
 //Test result 
 newArr = array;
 console.log(newArr);
 console.log(arrMap);
+console.log(arrFilter);
 

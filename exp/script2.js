@@ -120,7 +120,21 @@ let arrEvenNumber = arr.filter(item => item % 2 == 0);
 console.log("Array even number: " + arrEvenNumber);
 console.log(arrEvenNumber);
 
-//
+//Check prime numbers (Số nguyên tố) chia hết cho 1 và chính nó
+function isPrime(number){
+    if(number < 2 ){
+        return false;
+    }
+
+    for(let i = 2; i < number; i++ ){
+        if(number % i === 0){ //2 dấu = là ép lỏng vd: '5' == 5, 0 == false, còn 3 dấu = là so sánh giá trị biến và luôn kiểu dữ liệu
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log("Số nguyên tố: " + isPrime(5)); //true
 
 
 

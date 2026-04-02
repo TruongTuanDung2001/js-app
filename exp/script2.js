@@ -147,8 +147,10 @@ console.log(doubleValue);
 // }
 //Callback: Đưa việc xử lý cho function khác làm
 // process = người giao việc, callback = người làm việc, a = nguyên liệu.
+
+/* Sử dụng function */
 function process(a, callback){
-    callback(a);
+    callback(a); //Mấu chốt nằm ở đây
 }
 
 function print(value){
@@ -156,3 +158,13 @@ function print(value){
 }
 
 process(10, print);
+
+// Sử dụng anonymous function
+process(12, function(x){
+    console.log("Value is : " + x);
+});
+
+// Sử dụng arrow funcion
+process(18, (x)=> {
+    console.log("Value is : " + x);
+})

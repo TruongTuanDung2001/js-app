@@ -115,3 +115,12 @@ console.log("The largest number: " + fr);
 console.log(arrFilter);
 console.log(arrReduce);
 
+//Find even numbers, use filter is the best
+let arrEvenNumber = arr.filter(item => item % 2 == 0);
+console.log("Array even number: " + arrEvenNumber);
+console.log(arrEvenNumber);
+
+//
+
+
+

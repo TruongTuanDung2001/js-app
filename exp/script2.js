@@ -136,5 +136,11 @@ function isPrime(number){
 
 console.log("Số nguyên tố: " + isPrime(5)); //true
 
+//Double value array (Map)
+let doubleValue = arr.map(item => item * 2);
+console.log("Double array: " + doubleValue);
+console.log(doubleValue);
+
+//CALLBACK CLOSURE
 
 

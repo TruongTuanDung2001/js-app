@@ -142,5 +142,17 @@ console.log("Double array: " + doubleValue);
 console.log(doubleValue);
 
 //CALLBACK CLOSURE
+// function callBack(a, callback){ 
+//     //Gọi callback với a
+// }
+//Callback: Đưa việc xử lý cho function khác làm
+// process = người giao việc, callback = người làm việc, a = nguyên liệu.
+function process(a, callback){
+    callback(a);
+}
 
+function print(value){
+    console.log("Value is : " + value);
+}
 
+process(10, print);

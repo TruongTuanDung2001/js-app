@@ -168,3 +168,31 @@ process(12, function(x){
 process(18, (x)=> {
     console.log("Value is : " + x);
 })
+
+//CLOSURE : Là function và môi trường biến bên ngoài của nó, nó sẽ nhớ các biến scope bên ngoài, mặc dù nó đã kết thúc
+// Như là đặt 1 biến count = 0 trong 1 funcion, nó sẽ nhớ biến đó qua mỗi lần chạy function trong 1 function chứa biến count đã nhớ, 
+function outer(){
+    let count = 0;
+
+    function inner(){
+        count++;
+        console.log(count);
+    }
+
+    return inner;// tại sao không return inner(); ?
+    /*
+        Nếu dùng closure thì return inner vì mỗi lần gọi fn() thì inner chạy -> count vẫn được giữ lại.
+        Nếu dùng bth thì return inner() nó sẽ trả về giá trị luôn, chạy xong là hết, biến bên trong không còn dùng tiếp được nữa
+        🧩 Kết luận
+            👉 Muốn dùng closure:
+            return inner; // 🔥 bắt buộc
+            👉 Không dùng:
+            return inner(); // ❌ mất closure
+    */
+}
+
+const fn = outer();
+fn(); //1
+fn(); //2
+fn(); //3
+

@@ -27,7 +27,7 @@ array.pop();
 array.shift();
 console.log(array.shift());
 
-//CHECK
+//REVIEW
 //Map / trả về 1 mảng mới, không ảnh hưởng đến mảng cũ, phải dùng biến mới để lưu lại, duyệt từng phần tử trả về số phần tử mảng giữ nguyên
 array.map(item => item * 2); // chưa lưu mới lại nên mảng cũ vẫn chưa thay đổi
 let arrMap = array.map(item =>{

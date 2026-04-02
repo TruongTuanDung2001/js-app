@@ -61,3 +61,57 @@ btnSubmitText.addEventListener("click", function(){
     reverse(content);
 });
 
+//BT FUNCTION / ARRAY
+let arr = [1, 5, 2, 9, 3, 12, -1, 99, 101, -35];
+//Find the largest number
+//foreach
+let fe = arr[0];
+arr.forEach(element =>{
+    if(element > fe ){
+        fe = element;
+    }
+});
+
+//for
+let fr = arr[0];
+for(let i = 0; i < arr.length; i++){
+    if(arr[i] > fr){
+        fr = arr[i];
+    }
+}
+
+//filter
+let arrFilter = arr.filter(item => {
+    let i = 0;
+    return item > i;
+})
+
+//reduce chuẩn nhất
+let arrReduce = arr.reduce((max, number) => {
+    return number > max ? max = number: max;
+}, 0);
+
+//vd:
+// const numbers = [175, 50, 25];
+
+// document.getElementById("demo").innerHTML = numbers.reduce(myFunc);
+//t = 175, n = 50 => t - n = 125;
+//t = 125, n = 25 => t - n = 100;
+
+// document.getElementById("demo").innerHTML = numbers.reduce(myFunc, 0);
+//t = 0; n = 175 => t - n = -175;
+//t = -175; n = 50 => t - n = -225;
+//t = -225; n = 25 => t - n = -250;
+
+// function myFunc(total, num) {
+//   return total - num;
+// } 
+//Lưu ý: REDUCE CẦN: reduce(callback, initialValue); initialValue là con số , 0 ở sau á, không bắt buộc phải có
+// Quan trọng là callback: 2 tham số (accumulator, currentValue) để làm việc, có thể tạo 1 function có 2 tham số để làm ngoài xong gán vô reduce(function);
+
+//
+console.log("The largest number: " + fe);
+console.log("The largest number: " + fr);
+console.log(arrFilter);
+console.log(arrReduce);
+

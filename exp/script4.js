@@ -23,3 +23,12 @@ async function run(){
     console.log(await delay("TRƯƠNG TUẤN DŨNG", 1500));// đặt await trước delay vì nó đợi delay xong mới chạy, muốn chạy tuần tự thì thêm ở dưới
 }
 run();
+
+//DOM
+let nameInput = document.getElementById("name");
+let btnShow = document.getElementById("btn-show");
+let resultName = document.getElementById("result");
+
+btnShow.addEventListener("click", function(){
+    resultName.textContent = nameInput.value;
+});

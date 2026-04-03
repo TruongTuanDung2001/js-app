@@ -32,3 +32,37 @@ let resultName = document.getElementById("result");
 btnShow.addEventListener("click", function(){
     resultName.textContent = nameInput.value;
 });
+
+//
+let userInput = document.getElementById("user");
+let list = document.getElementById("list");
+let btnAdd = document.getElementById("btn-add");
+let allUser = [];
+// list.innerHTML = `<li class="item-list">User 2</li>`
+
+function addUser(userInput){
+    if(userInput.value == 0){
+        alert("No data, please check your input");
+    }
+    else{
+        allUser.push(userInput.value);//allUser['user1', 'user2', ...]
+        list.innerHTML = "";
+        for(let i = 0; i < allUser.length; i++){
+            list.innerHTML += `<li class="item-list">${allUser[i]}</li> <br>`;
+        }
+    }
+    userInput.value = "";
+    userInput.focus();
+}
+
+btnAdd.addEventListener("click", function(){
+    addUser(userInput);
+});
+
+userInput.addEventListener("keydown", function(e){
+    if(e.key == "Enter"){
+        addUser(userInput);
+    }
+});
+
+
